@@ -1,17 +1,29 @@
+@page {
+    size: A4;
+    margin: 20mm; /* Marginesy na stronie A4 */
+}
+
 body {
     font-family: "Montserrat", sans-serif;
     background: #f5f7fa;
     margin: 0;
     padding: 0;
+    width: 100%;
+    height: 100%;
 }
+
 .wrapper {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    width: 1200px;
-    margin: 0 auto;
+    justify-content: space-between; /* Zapewnia, że stopka będzie na dole strony */
+    width: 100%;
+    min-height: 100%; /* Ustawia minimalną wysokość na pełną stronę */
     background: #fff;
     box-shadow: 6px 6px 20px 0 rgba(0, 0, 0, 0.1);
+    padding: 20px; /* Dodatkowe padding w wrapperze */
+    box-sizing: border-box;
+    page-break-before: auto;
+    page-break-after: auto;
 }
 
 header {
@@ -25,10 +37,11 @@ header {
     padding: 20px;
     box-sizing: border-box;
 }
+
 .date-container {
     position: absolute;
-    top: 40px; /* Ustala odległość od górnej krawędzi */
-    right: 40px; /* Ustala odległość od prawej krawędzi */
+    top: 20px;  /* Przesuwamy w górę, by była bliżej krawędzi */
+    right: 20px; /* Przesuwamy w prawo, aby była w prawym górnym rogu */
     color: #ffffff;
     font-size: 14px;
 }
@@ -37,46 +50,46 @@ header {
 .heaader-secondary {
     color: #ffffff;
 }
+
 .Contact-links {
     color: #ffffff;
     font-size: 14px;
     line-height: 24px;
 }
+
 .bold {
     font-weight: 700;
 }
 
-
 main {
-    padding: 20px 25px;
     flex-grow: 1;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    max-width: 100%;
+    min-height: 65%; /* Gwarantuje, że główna sekcja nie będzie zajmować całej wysokości, pozostawiając miejsce na stopkę */
 }
 
 h1 {
     font-weight: 700;
     font-size: 45px;
 }
+
 .description {
-    width: 100%;
     font-weight: 400;
     font-size: 14px;
     line-height: 171%;
     color: #595959;
     text-align: justify;
-}
-.Projects {
-    width: 100%;
-    margin-bottom: 51px;
+    max-width: 1000px; /* Ogranicza szerokość tekstu */
 }
 
 .header-primary {
     font-weight: 700;
     font-size: 22px;
     line-height: 27px;
-    margin-bottom: 12px;
+    margin-bottom: 50px;
+    color: #2c3e50;
 }
-
-
 
 footer {
     text-align: center;
@@ -85,6 +98,8 @@ footer {
     padding: 20px;
     background-color: #f9f9f9;
     margin-top: 40px;
+    page-break-before: auto;
+    page-break-after: auto;
 }
 
 .footer-text {
@@ -92,4 +107,37 @@ footer {
     line-height: 1.6;
     max-width: 1200px;      
     place-self: center;
+}
+
+/* Dodatkowe marginesy dla treści listu, by tekst nie wychodził poza stronę */
+main p {
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+/* Zapewnienie, by treść nie ucinała się, a stopka była na dole */
+@media print {
+    body {
+        width: 100%;
+        height: auto;
+    }
+
+    .wrapper {
+        height: auto;
+        page-break-before: auto;
+        page-break-after: auto;
+    }
+
+    main {
+        page-break-before: auto;
+        page-break-after: auto;
+        min-height: 60%; /* Gwarantuje, że treść zajmie odpowiednią ilość miejsca, nie powodując przewijania */
+        overflow: visible; /* Treść nie będzie się "ścisnąć" */
+    }
+
+    footer {
+        position: absolute; /* Ustawia stopkę na dole strony */
+        bottom: 20mm; /* Odstęp od dolnej krawędzi strony */
+        width: 100%;
+    }
 }
