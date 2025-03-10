@@ -1,0 +1,95 @@
+body {
+    font-family: "Montserrat", sans-serif;
+    background: #f5f7fa;
+    margin: 0;
+    padding: 0;
+}
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 1200px;
+    margin: 0 auto;
+    background: #fff;
+    box-shadow: 6px 6px 20px 0 rgba(0, 0, 0, 0.1);
+}
+
+header {
+    width: 100%;
+    background: #1e2939;
+    text-align: left; 
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    position: relative;
+    padding: 20px;
+    box-sizing: border-box;
+}
+.date-container {
+    position: absolute;
+    top: 40px; /* Ustala odległość od górnej krawędzi */
+    right: 40px; /* Ustala odległość od prawej krawędzi */
+    color: #ffffff;
+    font-size: 14px;
+}
+
+
+.heaader-secondary {
+    color: #ffffff;
+}
+.Contact-links {
+    color: #ffffff;
+    font-size: 14px;
+    line-height: 24px;
+}
+.bold {
+    font-weight: 700;
+}
+
+
+main {
+    padding: 20px 25px;
+    flex-grow: 1;
+}
+
+h1 {
+    font-weight: 700;
+    font-size: 45px;
+}
+.description {
+    width: 100%;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 171%;
+    color: #595959;
+    text-align: justify;
+}
+.Projects {
+    width: 100%;
+    margin-bottom: 51px;
+}
+
+.header-primary {
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 27px;
+    margin-bottom: 12px;
+}
+
+
+
+footer {
+    text-align: center;
+    font-size: 14px;
+    color: #555;
+    padding: 20px;
+    background-color: #f9f9f9;
+    margin-top: 40px;
+}
+
+.footer-text {
+    margin: 0;
+    line-height: 1.6;
+    max-width: 1200px;      
+    place-self: center;
+}
